@@ -22,7 +22,7 @@ When an IDE agent (e.g., GitHub Copilot, Cursor, Claude Code) makes an API call,
 
 This means you can:
 
-- **Reroute any agent to any provider**: Copilot talking to OpenAI? Redirect it to Anthropic Claude, Gemini, or any of OmniRoute's 160+ providers.
+- **Reroute any agent to any provider**: Copilot talking to OpenAI? Redirect it to Anthropic Claude, Gemini, or any of OmniRoute's 226+ providers.
 - **Apply model mappings**: `gemini-3-flash` → `claude-sonnet-4.7` transparently at the handler level.
 - **Observe all agent traffic**: every intercepted request is published to the [Traffic Inspector](./TRAFFIC_INSPECTOR.md).
 - **Apply OmniRoute resilience**: combo routing, circuit breakers, fallbacks, and cost tracking work for IDE agent traffic too.
@@ -367,7 +367,7 @@ Base path: `/api/tools/agent-bridge/`
 | GET | `/api/tools/agent-bridge/agents` | List all 9 agents with current state |
 | GET | `/api/tools/agent-bridge/state` | Global server state (running, port, cert info) |
 | POST | `/api/tools/agent-bridge/server` | Start/stop/restart server (`action: "start"\|"stop"\|"restart"\|"trust-cert"\|"regenerate-cert"`) |
-| GET | `/api/tools/agent-bridge/agents/{id}/state` | State of one agent (dns_enabled, cert_trusted, etc.) |
+| GET | `/api/tools/agent-bridge/agents/{id}` | State of one agent (dns_enabled, cert_trusted, etc.) |
 | POST | `/api/tools/agent-bridge/agents/{id}/dns` | Enable/disable DNS for agent (`{enabled: boolean}`) |
 | GET | `/api/tools/agent-bridge/agents/{id}/mappings` | Model mappings for agent |
 | PUT | `/api/tools/agent-bridge/agents/{id}/mappings` | Update model mappings |
